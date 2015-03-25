@@ -162,7 +162,7 @@ class ABNF(object):
             raise ValueError("not 0 or 1")
         if self.opcode not in ABNF.OPCODES:
             raise ValueError("Invalid OPCODE")
-        length = len(self.data)
+        length = len(self.data) if self.data else 0
         if length >= ABNF.LENGTH_63:
             raise ValueError("data is too long")
 
